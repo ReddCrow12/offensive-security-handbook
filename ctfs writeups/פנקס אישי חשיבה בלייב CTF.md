@@ -1,5 +1,7 @@
 # Biblioteca
-![[Pasted image 20260330090809.png]]
+
+<img width="500" height="500" alt="Pasted image 20260330090809" src="https://github.com/user-attachments/assets/531264b9-d25f-4d27-9cc2-8d355e15e5dc" />
+
 רמה: בינונית (חימום)
 קטגוריה: (web)
 מטרה: `10.114.175.248`
@@ -40,13 +42,13 @@ Nmap done: 1 IP address (1 host up) scanned in 11.12 seconds
 לא מצאתי משהו מיוחד או חולשות שקיימות כבר על הגרסה הזאת
 נמשיך לגלוש באתר.
 
-![[Pasted image 20260330091906.png]]
+<img width="1493" height="857" alt="Pasted image 20260330091906" src="https://github.com/user-attachments/assets/eeb95af0-c2d4-4910-9c84-e58da39240db" />
 
 יש הרשמה והתחברות אני ינסה לראות האם יש עוד דפים
 ומה יש ב- source code
 ב SOURCE אין הערות חשודות, עכשיו אני ישתמש ב- nuclei 
 וב- dirsearch כדי לראות עוד אינפורמציה
-![[Pasted image 20260330092441.png]]
+<img width="1319" height="791" alt="Pasted image 20260330092441" src="https://github.com/user-attachments/assets/1af86d33-39dc-4803-8a9e-61b17428d177" />
 
 הכלי dirsearch לא אמר לנו דברים שלא ידענו, אנחנו צריכים לבדוק מה עם הnuclei לאחר מכן נראה האם לזרום עם הממשק ולנסות להתחבר
 או לנצל את הדרך פנימה 
@@ -93,13 +95,13 @@ Nmap done: 1 IP address (1 host up) scanned in 11.12 seconds
 גם nuclei לא הראה משהו מיוחד מה שנשאר לנו זה רק להתחבר כרגיל ולבדוק את הממשק מאחורי הדף התחברות
 גם לאחר התחברות כרגיל אנחנו רואים שהדף עצמו ריק
 רק logout יש:
-![[Pasted image 20260330093423.png]]
+<img width="1074" height="782" alt="Pasted image 20260330093423" src="https://github.com/user-attachments/assets/923078aa-7bc4-4871-8704-be6f8c020866" />
 
 למרות שזה נראה בלתי אפשרי לפריצה מי שיש לו מספיק ניסיון ישר מבין שהפריצה היא ממוקדת והיחידה שיכולה להיות אפשרות מבחינתינו:
 שזאת `SQL Injection` ללוגין.
 אני השתמש בכלי בשם sqlmap כדי לבדוק האם הבקשת לוגין (כניסה)
 פגיעה ל SQLi:
-![[Pasted image 20260330093729.png]]
+<img width="1565" height="636" alt="Pasted image 20260330093729" src="https://github.com/user-attachments/assets/c630734b-0c46-45b4-a9ff-56ec71d794ce" />
 
 ### (הייתה לי הפסקה קטנה..)
 
@@ -176,11 +178,11 @@ Table: users
 לפי הניסיונות שלנו להתחבר למערכת באתר אנחנו מבינים שאין טעם להיכנס עם השם משתמש והסיסמא לאתר כי אין שם תוכן.
 אבל אנחנו צריכים לזכור שיש גם פורט 22 פתוח שזה SSH (שליטה מרחוק)
 אולי זה יכול לעבוד שם:
-![[Pasted image 20260330105633.png]]
+<img width="1721" height="899" alt="Pasted image 20260330105633" src="https://github.com/user-attachments/assets/2ab19fd5-05c7-4367-8f5c-2dd19303a851" />
 
 קיבלנו שליטה על המכונה! ננסה לחפש את הדגלים ונראה מה אפשר לעשות..
 מצאתי את הדגל הראשון, אבל אני לא יכול לפתוח אותו בגלל שאין לי את ההרשאות, אני לא במשתמש המתאים `hazel`
-![[Pasted image 20260330105936.png]]
+<img width="855" height="241" alt="Pasted image 20260330105936" src="https://github.com/user-attachments/assets/37acd730-444a-4a65-a368-e5131ae2565d" />
 
 ננסה להיכנס למשתמש בעזרת Brute Force של הסיסמא כי יש לנו כבר שם משתמש, ורק נותר לנו לנסות סיסמאות שונות בשביל לראות את הסיסמא הנכונה, בשביל זה יש לנו כלי שקוראים לו `hydra` שהוא כלי רחב מאוד לביצוע Brute Force בממשקים שונים.
 
@@ -196,7 +198,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-30 11:09:
 ```
 
 יש לנו שם משתמש וסיסמא, אנחנו יכולים להיכנס לקחת את הדגל הראשון:
-![[Pasted image 20260330111157.png]]
+<img width="616" height="165" alt="Pasted image 20260330111157" src="https://github.com/user-attachments/assets/83af5eab-4670-40c5-958b-90c1cb7d1516" />
 
 באותה תיקיה של המשתמש הזה, נמצא הקובץ `hasher.py`
 הסטטוס של הקובץ: `-rw-r----- 1 root  hazel  497 Dec  7  2021 hasher.py`
@@ -213,7 +215,7 @@ User hazel may run the following commands on ip-10-114-181-45:
 זה חשוב מאוד אנחנו יכולים להחליף את מיקום הקובץ, ובניסיון לפתוח את הקובץ אנחנו רואים שהקובץ משתמש ב `import hashlib` אנחנו יכולים לעשות `python library hijack` וגם מכיוון שאני יכול להפנות את PYTHONPATH לספרייה שאני שולט בה.
 אם אשים hashlib.py זדוני בספרייה זו, Python יעשה `import` לקובץ שלי במקום הקובץ האמיתי, שמתי שאני יפעיל את הקובץ `hasher.py` אני יוכל להשתלט עליו ולגרום לו לעשות מה שבא לי, במקרה שלנו להיכנס דרך root
 
-![[Pasted image 20260330113427.png]]
+<img width="1218" height="873" alt="Pasted image 20260330113427" src="https://github.com/user-attachments/assets/1bbe0b26-1a66-43c2-ac82-006e06383e10" />
 
 החלפתי את המיקום של `hashlib` ל- tmp כי זאת תיקייה שיש לי עליה שליטה מלאה, והכנסתי לתוך hashlib את הפיילוד הבא:
 
@@ -233,10 +235,10 @@ PY
 בעזרת `nc -lnvp 4444`
 ולשנות את נתיב הקובץ הראשי כדי שהמערכת תזהה רק את הקובץ שלנו לייבוא בעזרת הפקודה `sudo PYTHONPATH=/tmp/ /usr/bin/python3 /home/hazel/hasher.py` אנחנו יכולים לראות 
 
-![[Pasted image 20260330114118.png]]
+<img width="1248" height="617" alt="Pasted image 20260330114118" src="https://github.com/user-attachments/assets/af6ecf0f-d98d-4f67-83d5-ef5fac74ff1d" />
 
 
 קיבלנו הרשאות root וסיימנו את האתגר CTF, לא היה כזה קשה אבל זה אחלה חימום ותרגול חשיבה של איש סייבר. 
 
-![[Pasted image 20260330114506.png]]
+<img width="1763" height="792" alt="Pasted image 20260330114506" src="https://github.com/user-attachments/assets/f4c6abd5-4c97-4b70-929e-3e17b75e1da9" />
 
