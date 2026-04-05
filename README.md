@@ -1,2 +1,68 @@
-# offensive-security-handbook
-🔐 Offensive Security Handbook | מדריך אבטחה התקפית  A personal knowledge base and writeups collection covering CTFs, Bug Bounty, and web vulnerabilities. Everything is written in Hebrew
+# 🦅 Offensive Security Handbook
+
+> מאגר ידע אישי הכולל writeups, ניתוחי פגיעויות וטכניקות התקפיות.
+> הכל כתוב בעברית — במטרה להנגיש את תחום האבטחה ההתקפית לקהילה הישראלית.
+
+---
+
+## 📖 על הריפו
+
+הריפו הזה נולד מתוך תהליך הלמידה האישי שלי בתחום ה-Offensive Security.
+כל writeup כתוב בצורה מפורטת ככל האפשר — כדי שגם מי שנתקל בנושא בפעם הראשונה יוכל להבין.
+
+הריפו מתעדכן באופן שוטף עם CTFs חדשים, פגיעויות ותובנות מהשטח.
+
+---
+
+## 📂 תוכן עניינים
+
+- 📁 [Business Logic Writeups](./Business%20Logic%20writeups/)
+- 📁 [Principles of Security](./Principles%20of%20Security/)
+- 📁 [CTF Writeups](./ctfs%20writeups/)
+- 📁 [IDOR Writeups](./writeups%20IDOR/)
+
+---
+
+## 👤 על עצמי
+
+היי, אני **Ziv Cohen** המכונה **Redd Crow** 🦅
+
+חוקר אבטחה התקפית בתהליך — לומד, מתרגל וכותב על מה שאני מגלה בדרך.
+מאמין שידע צריך להיות נגיש לכולם, ובמיוחד בעברית.
+
+---
+
+## 🖼️ Screenshots
+
+> תמונות מתוך הריפו / writeups נבחרים
+
+<!-- הוסף תמונות כאן -->
+
+---
+
+## 🎯 למי זה מתאים?
+
+| קהל | למה זה רלוונטי |
+|-----|----------------|
+| 🟢 מתחילים | הסברים מפורטים בעברית, ללא הנחות ידע מוקדם |
+| 🟡 בינוניים | טכניקות וחשיבה מאחורי כל פגיעות |
+| 🔴 מתקדמים | נקודת מבט נוספת על בעיות מוכרות |
+
+---
+
+## ❓ למה חשוב ללמוד Offensive Security?
+
+- להבין איך תוקף חושב — זה הבסיס להגנה אמיתית
+- CTFs ו-Bug Bounty מפתחים חשיבה יצירתית ופתרון בעיות
+- התחום פתוח לכולם — לא צריך תואר, רק סקרנות ורצון ללמוד
+
+---
+
+## 📬 יצירת קשר
+
+- 📧 [zivc0979@gmail.com](mailto:zivc0979@gmail.com)
+- 🔐 [TryHackMe - ReddCrow](https://tryhackme.com/p/ReddCrow)
+
+---
+
+> *"The quieter you become, the more you can hear."* 🦅
