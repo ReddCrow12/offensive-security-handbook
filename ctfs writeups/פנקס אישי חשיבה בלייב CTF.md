@@ -12,7 +12,7 @@
 עכשיו אני יבצע סריקת שירותים כדי לבדוק מה פועל עליו
 השתמשתי בפקודה: `nmap -sC -sV -T4 10.114.175.248`
 ומצאתי את הדברים הבאים:
-``` json
+``` nse
 Starting Nmap 7.95 ( https://nmap.org ) at 2026-03-30 09:13 IDT
 Stats: 0:00:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
 NSE Timing: About 99.30% done; ETC: 09:13 (0:00:00 remaining)
