@@ -14,7 +14,7 @@
 
 ### פיתרון מלא:
 
-![[Pasted image 20260329162250.png]]
+<img width="1808" height="787" alt="Pasted image 20260329162250" src="https://github.com/user-attachments/assets/843bc5e7-0230-4693-9341-0329b18708e1" />
 
 איך שמתחילים אפשר לראות את החנות עצמה ועוד 2 דפים
 - ו- My account
