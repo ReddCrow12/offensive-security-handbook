@@ -201,7 +201,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-30 11:09:
 באותה תיקיה של המשתמש הזה, נמצא הקובץ `hasher.py`
 הסטטוס של הקובץ: `-rw-r----- 1 root  hazel  497 Dec  7  2021 hasher.py`
 הוא משתמש מופעל על ידי root ואפשר לשנות לו את המיקום קובץ:
-``` json
+``` ubuntu
 hazel@ip-10-114-181-45:~$ sudo -l
 Matching Defaults entries for hazel on ip-10-114-181-45:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
