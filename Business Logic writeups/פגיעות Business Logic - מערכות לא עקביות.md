@@ -11,7 +11,7 @@
 
 ### הפתרון המלא:
 
-![[Pasted image 20260331160638.png]]
+<img width="1651" height="728" alt="Pasted image 20260331160638" src="https://github.com/user-attachments/assets/b71f2816-f6ac-4e5d-893b-4c47d3b83e61" />
 
 לפני שמתחילים לבדוק את הבעיה, אני רואה שאין לי הרשאות ומשתמש
 אז אני נרשם לאתר הזה עם ה- `Email client` של portswigger, ולאחר ההרשמה אני מנסה להיכנס לדף לוח המנהל שנמצא ב- `admin/`
@@ -23,16 +23,16 @@
 
 ואחרי קצת מחשבה אני נזכר שבדף `My Account` יש אופציה לעדכן email
 
-![[Pasted image 20260331161727.png]]
+<img width="1041" height="461" alt="Pasted image 20260331161727" src="https://github.com/user-attachments/assets/d706a0a9-7f67-4f55-a810-968062f5d0e6" />
 
 אם הדף הזה לא עושה אימות מייל כמו בהרשמה, אני יכול להירשם עם איזה מייל שבא לי, אז עליי לנסות להתחבר עם המייל המומצא הזה:
 ו- `ziv@dontwannacry.com` 
 
-![[Pasted image 20260331161953.png]]
+<img width="1375" height="607" alt="Pasted image 20260331161953" src="https://github.com/user-attachments/assets/a2ed7fae-ac83-42f7-94a4-20c3047a6c06" />
 
 וישר אחרי השינוי נפתח לי הדף של ה- admin panel כי המערכת מזהה אותי כעובד לפי המייל, כל מה שנשאר לעשות זה להיכנס לפנל ולמחוק את המשתמש של קרלוס.
 
-![[Pasted image 20260331162214.png]]
+<img width="1527" height="531" alt="Pasted image 20260331162214" src="https://github.com/user-attachments/assets/cba69000-4194-4b1d-9a76-17663c356128" />
 
 אחרי שמחקנו את המשתמש פתרנו את החדר הזה, החדר ההוא ממוקד ומראה לך בצורה הכי פשוטה דברים שיקרו/קרו במציאות.
 במציאות, ההחלפת מייל הזאת ללא אימות מסוכנת גם כי זה מאפשר לך להתחזות לעובדים פנימיים של החברה או לשירות לקוחות
