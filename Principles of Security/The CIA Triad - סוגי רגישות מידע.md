@@ -1,4 +1,4 @@
-![[Pasted image 20260119164146.png]]
+<img width="704" height="520" alt="Pasted image 20260119164146" src="https://github.com/user-attachments/assets/299b1849-da38-4d33-8a0a-81237ead4b79" />
 
 מודל **CIA Triad** הוא מודל יסוד באבטחת מידע, המשמש כבסיס ליצירת מדיניות אבטחה בארגונים.  
 למודל היסטוריה ארוכה, והוא נמצא בשימוש כבר משנת **1998**.
