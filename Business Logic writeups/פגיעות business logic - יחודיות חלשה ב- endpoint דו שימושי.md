@@ -18,11 +18,12 @@
 
 נכנסים עם wiener, נכנסים לדף החשבון, ורואים טופס שינוי סיסמה רגיל לכאורה.
 
-![[צילום מסך 2026-04-09 131825.png]]
+<img width="1468" height="757" alt="צילום מסך 2026-04-09 131825" src="https://github.com/user-attachments/assets/5bb87dda-2c77-4bb7-a3a6-a96b2f3ea061" />
+
 
 מיירטים את הבקשה עם Burp כשמשנים סיסמה:
 
-![[צילום מסך 2026-04-09 131959.png]]
+<img width="1873" height="832" alt="צילום מסך 2026-04-09 131959" src="https://github.com/user-attachments/assets/094e9d28-2ff3-4746-91ee-9f79435f73ad" />
 
 ```http
 POST /my-account/change-password HTTP/2
@@ -44,13 +45,13 @@ csrf=g9YVjGyY5qPKpgKrac8df4CqrgBeBtEi
 
 **ניסיון ראשון** — שולחים עם `username=carlos` ועם הסיסמה הנוכחית שלנו (`peter`):
 
-![[צילום מסך 2026-04-09 132234.png]]
+<img width="1619" height="862" alt="צילום מסך 2026-04-09 132234" src="https://github.com/user-attachments/assets/f3294386-d9b7-4e88-83e0-96c34ececc6a" />
 
 נכשל. הגיוני — השרת בדק שהסיסמה הנוכחית תואמת לחשבון `carlos`, ולנו אין אותה.
 
 **ניסיון שני** — שולחים עם `current-password=` ריק לגמרי:
 
-![[צילום מסך 2026-04-09 132248.png]]
+<img width="1539" height="877" alt="צילום מסך 2026-04-09 132248" src="https://github.com/user-attachments/assets/18ea2106-5b28-42ca-b88f-e0103d56d815" />
 
 גם לא עבד. השרת ראה שדה ריק ודחה.
 
@@ -60,7 +61,7 @@ csrf=g9YVjGyY5qPKpgKrac8df4CqrgBeBtEi
 csrf=...&username=carlos&new-password-1=hacked&new-password-2=hacked
 ```
 
-![[צילום מסך 2026-04-09 132604.png]]
+<img width="1881" height="901" alt="צילום מסך 2026-04-09 132604" src="https://github.com/user-attachments/assets/bfb64c7f-6d79-4919-bc17-a2583e0f0f6a" />
 
 עבד.
 
@@ -89,15 +90,15 @@ changePassword($_POST['username'], $_POST['new-password-1']);
 
 עכשיו שיודעים שהטריק עובד, חוזרים עליו עם `username=administrator`:
 
-![[צילום מסך 2026-04-09 133115.png]]
+<img width="1875" height="1004" alt="צילום מסך 2026-04-09 133115" src="https://github.com/user-attachments/assets/4a0f5179-1b63-4637-b49b-f300985b0cc8" />
 
 מתנתקים מ-wiener ומנסים להיכנס כ-administrator עם הסיסמה החדשה שהגדרנו:
 
-![[צילום מסך 2026-04-09 132935.png]]
+<img width="1525" height="773" alt="צילום מסך 2026-04-09 132935" src="https://github.com/user-attachments/assets/16f2a4b8-1bdb-466f-b1e5-8f07eba20ec3" />
 
 נכנסנו. עוברים ל-Admin Panel ומוחקים את carlos:
 
-![[צילום מסך 2026-04-09 133309.png]]
+<img width="1616" height="767" alt="צילום מסך 2026-04-09 133309" src="https://github.com/user-attachments/assets/f8e2b13b-a266-4b90-bbf9-1f54a7e44ed1" />
 
 לאב נפתר.
 
