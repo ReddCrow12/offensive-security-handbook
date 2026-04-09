@@ -1,4 +1,4 @@
-# פגיעות Business Logic - אימות תהליכים לא מאובטח
+<img width="1462" height="851" alt="צילום מסך 2026-04-09 151232" src="https://github.com/user-attachments/assets/2e7f22a6-8b9e-4787-9ff5-3d7869f8b507" /># פגיעות Business Logic - אימות תהליכים לא מאובטח
 
 הסימולציה שאני עושה נמצאת באתר portswigger, שנקרא: Lab: Insufficient workflow validation
 
@@ -37,7 +37,7 @@
 - **Username:** `wiener`
 - **Password:** `peter`
 
-![[צילום מסך 2026-04-09 151135.png]]
+<img width="1499" height="763" alt="צילום מסך 2026-04-09 151135" src="https://github.com/user-attachments/assets/a1a66e79-7eb3-4d28-bb2f-360135bb0aac" />
 
 ---
 
@@ -48,11 +48,11 @@
 
 כדי **לא לפספס את מה שהמערכת עושה מאחורי הקלעים**, קניתי קודם מוצר זול שנכנס לתקציב שלי, ועקבתי אחרי בקשות ה-HTTP דרך Burp Suite:
 
-![[צילום מסך 2026-04-09 151232.png]]
+<img width="1462" height="851" alt="צילום מסך 2026-04-09 151232" src="https://github.com/user-attachments/assets/a942484a-7e0a-42e4-a6c1-f0257f82e823" />
 
 המוצר הזול נקנה בהצלחה:
 
-![[צילום מסך 2026-04-09 151254.png]]
+<img width="1507" height="805" alt="צילום מסך 2026-04-09 151254" src="https://github.com/user-attachments/assets/e4bbced8-92f0-4979-85c8-cdc400a187b0" />
 
 ---
 
@@ -86,7 +86,7 @@ Cookie: session=jVJMTm2Jh9xolwApLSGQ06nHMQmMA7kA
 
 > 💡 **התובנה הקריטית:** שים לב שבקשת האישור הסופית (`order-confirmation?order-confirmed=true`) היא פשוט **GET request עם פרמטר בוליאני**. המערכת לא בודקת אם שלב ה-`/cart/checkout` אכן החזיר תשלום מוצלח — היא פשוט **סומכת על הפרמטר**. זה הפגם.
 
-![[צילום מסך 2026-04-09 151340.png]]
+<img width="1910" height="689" alt="צילום מסך 2026-04-09 151340" src="https://github.com/user-attachments/assets/01423702-3ce8-42a4-ac4f-b3fe9ae0027d" />
 
 ---
 
@@ -94,7 +94,7 @@ Cookie: session=jVJMTm2Jh9xolwApLSGQ06nHMQmMA7kA
 
 שמתי את המעיל היקר (`Lightweight l33t leather jacket`) בעגלה:
 
-![[צילום מסך 2026-04-09 151424.png]]
+<img width="1645" height="838" alt="צילום מסך 2026-04-09 151424" src="https://github.com/user-attachments/assets/9804c81b-5b06-4cf0-ab21-326bdb9e5f74" />
 
 ---
 
@@ -106,13 +106,13 @@ Cookie: session=jVJMTm2Jh9xolwApLSGQ06nHMQmMA7kA
 1. לחצתי על "Place order" — המערכת ניסתה לבדוק תשלום ונכשלה (`INSUFFICIENT_FUNDS`)
 2. **שלחתי ידנית** את בקשת אישור ההזמנה ישירות מה-Repeater, **מבלי לחכות לאישור תשלום**:
 
-![[Pasted image 20260409152313.png]]
+<img width="1701" height="920" alt="Pasted image 20260409152313" src="https://github.com/user-attachments/assets/5674ef18-eafd-4fcf-9b73-b496c7ad1406" />
 
 המערכת קיבלה את הבקשה, לא בדקה אם התשלום אכן עבר, ואישרה את ההזמנה:
 
-![[Pasted image 20260409152433.png]]
 
 **החדר נפתר בהצלחה. 🎉**
+<img width="1510" height="769" alt="Pasted image 20260409152433" src="https://github.com/user-attachments/assets/6afb982a-bf2c-4942-8449-1af382d1c08e" />
 
 ---
 
