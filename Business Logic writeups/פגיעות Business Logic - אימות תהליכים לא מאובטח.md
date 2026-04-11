@@ -1,4 +1,4 @@
-<img width="1462" height="851" alt="צילום מסך 2026-04-09 151232" src="https://github.com/user-attachments/assets/2e7f22a6-8b9e-4787-9ff5-3d7869f8b507" /># פגיעות Business Logic - אימות תהליכים לא מאובטח
+# פגיעות Business Logic - אימות תהליכים לא מאובטח
 
 הסימולציה שאני עושה נמצאת באתר portswigger, שנקרא: Lab: Insufficient workflow validation
 
