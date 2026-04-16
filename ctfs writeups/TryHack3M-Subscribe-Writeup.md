@@ -1,5 +1,5 @@
 # TryHack3M: Subscribe — Writeup
-![[Pasted image 20260409125929.png|484]]
+<img width="1200" height="1200" alt="Pasted image 20260409125929" src="https://github.com/user-attachments/assets/7a9d7460-93ce-4f72-a093-f1d28c0c2a04" />
 
 **רמה:** בינונית (דמוי ריאליסטי)  
 **קטגוריה:** Web, Linux  
@@ -59,7 +59,7 @@ PORT      STATE SERVICE  VERSION
 
 מתוך כל הפורטים, רק `80` ו־`8000` נגישים לנו בשלב הזה.
 
-![[Pasted image 20260409122930.png]]
+<img width="1100" height="406" alt="Pasted image 20260409122930" src="https://github.com/user-attachments/assets/72c1f787-3bd8-433c-adb3-4bd8b5d94202" />
 
 ---
 
@@ -67,11 +67,11 @@ PORT      STATE SERVICE  VERSION
 
 כשנכנסים לדף ההרשמה `http://hackme.thm/sign_up.php`, מופיע מסך שמבקש **קוד הזמנה**:
 
-![[Pasted image 20260409123013.png]]
+<img width="1100" height="317" alt="Pasted image 20260409123013" src="https://github.com/user-attachments/assets/02de06a2-e126-4575-a970-4bd00a8bb1e9" />
 
 פותחים את **Developer Tools** ומחפשים קבצי JS. מוצאים קובץ `invite.js` עם הקוד הבא:
 
-![[צילום מסך 2026-04-08 203257.png]]
+<img width="1363" height="578" alt="צילום מסך 2026-04-08 203257" src="https://github.com/user-attachments/assets/74b33913-7d8a-48be-a264-2454056ba78b" />
 
 ```javascript
 function e() {
@@ -103,7 +103,7 @@ function e() {
 echo "10.114.188.224 capture3millionsubscribers.thm" | sudo tee -a /etc/hosts
 ```
 
-![[צילום מסך 2026-04-08 203440.png]]
+<img width="1610" height="861" alt="צילום מסך 2026-04-08 203440" src="https://github.com/user-attachments/assets/134cf372-c149-464d-97c5-c9fee269717b" />
 
 לאחר מכן, ב־**Burp Suite** שולחים בקשת `POST` ידנית לכתובת:
 
@@ -111,7 +111,7 @@ echo "10.114.188.224 capture3millionsubscribers.thm" | sudo tee -a /etc/hosts
 POST http://capture3millionsubscribers.thm/inviteCode1337HM.php
 ```
 
-![[צילום מסך 2026-04-08 204522.png]]
+<img width="1578" height="802" alt="צילום מסך 2026-04-08 204522" src="https://github.com/user-attachments/assets/e6e36f08-d0a9-4b0a-8eff-cad5ca07cf92" />
 
 **התשובה:**
 
@@ -125,7 +125,7 @@ POST http://capture3millionsubscribers.thm/inviteCode1337HM.php
 
 מכניסים את קוד ההזמנה בדף ההרשמה. מופיעה הודעת שגיאה שמכילה את פרטי משתמש ה־guest:
 
-![[צילום מסך 2026-04-08 204623.png]]
+<img width="1283" height="560" alt="צילום מסך 2026-04-08 204623" src="https://github.com/user-attachments/assets/c326721f-1789-41f5-86cb-44338365d65e" />
 
 ```
 guest@hackme.thm : wedidit1010
@@ -142,9 +142,9 @@ guest@hackme.thm : wedidit1010
 
 משנים את הערך ל־`isVIP=true` (דרך DevTools או Burp Suite) וניגשים לחדר ה־VIP.
 
-![[צילום מסך 2026-04-08 205256.png|697]]
-![[צילום מסך 2026-04-08 205416.png]]
-![[צילום מסך 2026-04-08 205422.png]]
+<img width="1899" height="806" alt="צילום מסך 2026-04-08 205256" src="https://github.com/user-attachments/assets/4ee70f9d-84f4-4335-a73b-f5f289951ee1" />
+<img width="1696" height="815" alt="צילום מסך 2026-04-08 205416" src="https://github.com/user-attachments/assets/ca0088df-bf5c-4377-8054-e00524c4a6db" />
+<img width="1871" height="957" alt="צילום מסך 2026-04-08 205422" src="https://github.com/user-attachments/assets/bd243538-9a93-48e4-9471-dfa7043a257c" />
 
 שם מוצאים "מכונה מדומה" עם shell מוגבל שמאפשר רק את הפקודות הבאות:
 - `whoami`
@@ -171,11 +171,11 @@ $urlAdminPanel= "http://admin1337special.hackme.thm:40009";
 ```bash
 echo "10.114.188.224 admin1337special.hackme.thm" | sudo tee -a /etc/hosts
 ```
-![[צילום מסך 2026-04-08 212456 1.png]]
+<img width="1477" height="820" alt="צילום מסך 2026-04-08 212456 1" src="https://github.com/user-attachments/assets/2071632e-b3c5-429f-bf4e-683fadc4a618" />
 
 ניגשים ל־`http://admin1337special.hackme.thm:40009/public/html/login.php`. 
 
-![[צילום מסך 2026-04-08 212917.png]]
+<img width="1843" height="647" alt="צילום מסך 2026-04-08 212917" src="https://github.com/user-attachments/assets/3160ed3d-1073-4c96-9d0e-3064eac767fd" />
 
 מנסים להכניס `'` בשדה username — מקבלים שגיאת MySQL. **הדף פגיע ל־SQL Injection!**
 
@@ -223,12 +223,13 @@ Parameter: JSON username ((custom) POST)
 
 sqlmap הוציא את טבלת המשתמשים כולל פרטי admin. נכנסים לפאנל הניהול.
 
-![[צילום מסך 2026-04-08 214454.png]]
+<img width="1399" height="576" alt="צילום מסך 2026-04-08 214454" src="https://github.com/user-attachments/assets/7bb19b19-a4a8-4606-828b-e24dd5a77aa1" />
 
 בפאנל הניהול משנים את Action מ־`disabled` ל־`Sign Up` ושומרים.
 
 עוברים ל־`http://capture3millionsubscribers.thm/` — **הדגל מופיע!** 🎉
-![[צילום מסך 2026-04-08 214635.png]]
+
+<img width="1720" height="824" alt="צילום מסך 2026-04-08 214635" src="https://github.com/user-attachments/assets/a74aadea-bce8-4511-b70c-c465ac224f3a" />
 
 **התשובה:** `TryHack3M{3MSUBSCRIBERS}`
 
