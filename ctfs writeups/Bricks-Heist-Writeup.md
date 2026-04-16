@@ -1,5 +1,5 @@
 # TryHack3M: Bricks Heist
-![[Pasted image 20260407110348.png|525]]
+<img width="1200" height="1200" alt="Pasted image 20260407110348" src="https://github.com/user-attachments/assets/39ee46b9-8303-4466-a563-c51414ea2bc9" />
 
 רמה: קלה (מצויין למתחילים/ חימום)
 קטגוריה: (web)(crypto)
@@ -12,7 +12,7 @@
 דבר שני, האתגר ביקש לפני שמתחילים להשים את הדומיין `bricks.thm`
 עם כתובת הIP של המטרה בתוך התיקיה `/etc/hosts`
 
-![[צילום מסך 2026-04-07 113623.png]]
+<img width="1501" height="787" alt="צילום מסך 2026-04-07 113623" src="https://github.com/user-attachments/assets/a5e20f39-9d1c-4d57-800c-e993b7082ecf" />
 
 אחרי שסיימנו אם כל זה אנחנו יכולים להתחיל את תהליך הפיתרון
 ### שלב 1: איסוף מידע (recon)
@@ -83,10 +83,10 @@ Nmap done: 1 IP address (1 host up) scanned in 29.28 seconds
 
 אנחנו רואים שיש לנו פגיעות קריטית של `CVE-2024-25600` ולאחר חיפוש בגיטהאב אנחנו רואים את הדף הבא:
 
-![[צילום מסך 2026-04-07 112322.png]]
+<img width="1866" height="746" alt="צילום מסך 2026-04-07 112322" src="https://github.com/user-attachments/assets/1db6b005-4efd-443d-9d85-82913a8f3ed8" />
 
 הורדתי את התיקייה מהגיט והשתמשתי בכלי על מנת לקבל גישה לשרת הפגיע.
-![[צילום מסך 2026-04-07 114628.png]]
+<img width="1497" height="889" alt="צילום מסך 2026-04-07 114628" src="https://github.com/user-attachments/assets/2d5d1824-75f1-4633-9974-b3471eab4f79" />
 
 ואנחנו רואים שקיבלנו גישה למערכת ויש לנו קובץ סודי בתוך התיקייה של האתר, כשפותחים אותו מגלים דגל ואנחנו יכולים לענות על השאלה הראשונה
 #### What is the content of the hidden .txt file in the web folder?
@@ -102,7 +102,7 @@ systemctl list-units --type=service --state=running
 
 אחרי זה אנחנו רואים את הדבר הבא:
 
-![[צילום מסך 2026-04-07 115544.png]]
+<img width="1086" height="217" alt="צילום מסך 2026-04-07 115544" src="https://github.com/user-attachments/assets/c5284fe8-ce3d-477d-9d80-5c2f8c68615d" />
 
 התהליך של ubuntu.service נראה כמו התהליך החשוד שרץ
 בגלל שהוא מתואר כ- `tryhack3m` ולשם כך אני רוצה לראות את תוכן התהליך אז השתמשתי בפקודה הבאה וזה מה שקיבלתי:
@@ -138,7 +138,8 @@ ubuntu.service
 כורה הכוונה ל `crypto mining` והם מבקשים את השם של הקובץ לוג
 אנחנו רואים את התיקייה שבה התהליך נמצא ואנחנו יכולים לבדוק מהלוגים בתיקייה איזה אחד הוא של הכרייה
 בתוך התיקייה מצאתי את הקובץ `inet.conf` וכשפתחתי אותה לראות את התוכן גיליתי את הדבר הבא:
-![[צילום מסך 2026-04-07 120336.png]]
+
+<img width="1352" height="349" alt="צילום מסך 2026-04-07 120336" src="https://github.com/user-attachments/assets/08688910-6f12-4b7b-b240-0828f0fc7a70" />
 
 אז קודם כל נרשום את השם של הקובץ בשאלה ונמשיך לשאלה הבאה.
 
@@ -153,7 +154,7 @@ inet.conf
 ```
 
 השתמשתי ב- `CyberChef` כדי לגלות מה יש מאחורי ההצפנה וזה מה שגיליתי:
-![[Pasted image 20260407140818.png]]
+<img width="1536" height="781" alt="Pasted image 20260407140818" src="https://github.com/user-attachments/assets/5ccae011-baf3-42fe-b989-97984bae1580" />
 
 קיבלתי את הרצף הבא:
 ```
@@ -161,7 +162,7 @@ bc1qyk79fcp9hd5kreprce89tkh4wrtl8avt4l67qabc1qyk79fcp9had5kreprce89tkh4wrtl8avt4
 ```
 
 שכשבודקים בגוגל מה זאת ההצפנה הזאת מגלים את הדבר הבא:
-![[צילום מסך 2026-04-07 120556.png]]
+<img width="1350" height="689" alt="צילום מסך 2026-04-07 120556" src="https://github.com/user-attachments/assets/4832aa28-251f-47ef-94fa-4141f9963b9f" />
 
 מסתבר שזה 2 כתובות לביטקוין:
 ```
@@ -171,7 +172,7 @@ bc1qyk79fcp9had5kreprce89tkh4wrtl8avt4l67qa
 
 בדקתי באתר `https://www.blockchain.com/explorer/` כל כתובת בנפרד והכתובת הראשונה היחידה שעבדה והיא הביאה לי את הארנק של הכורה:
 
-![[צילום מסך 2026-04-07 141420.png]]
+<img width="1463" height="777" alt="צילום מסך 2026-04-07 141420" src="https://github.com/user-attachments/assets/b959848e-9e08-4b4c-828d-39431c11bd2a" />
 
 #### What is the wallet address of the miner instance?
 ```
@@ -179,11 +180,12 @@ bc1qyk79fcp9hd5kreprce89tkh4wrtl8avt4l67qa
 ```
 
 והשאלה האחרונה ששואלים אותנו `איזה מהארנקים בהסטוריית העברה, שייח לקבוצת הונאה ותמצא למי הוא שייך`. נכנסתי להיסטוריה ובדקתי אחד אחד עד שמצאתי את זה:
-![[צילום מסך 2026-04-07 141436.png]]
+
+<img width="1090" height="334" alt="צילום מסך 2026-04-07 141436" src="https://github.com/user-attachments/assets/af138111-d509-4cb8-af05-f3a4e0fc638b" />
 
 כשחיפשתי בגוגל את הכתובת ארנק: `32pTjxTNi7snk8sodrgfmdKao3DEn1nVJM` וזה שייך לקבוצה מסוכנת בשם LockBit
 
-![[צילום מסך 2026-04-07 121128.png]]
+<img width="1318" height="614" alt="צילום מסך 2026-04-07 121128" src="https://github.com/user-attachments/assets/59a48275-480e-494b-8e6a-a68efe8a3ff1" />
 
 #### The wallet address used has been involved in transactions between wallets belonging to which threat group?
 ```
@@ -192,5 +194,5 @@ LockBit
 
 וככה סיימנו את האתגר הזה.
 
-![[Pasted image 20260407142946.png]]
+<img width="1672" height="897" alt="Pasted image 20260407142946" src="https://github.com/user-attachments/assets/e9c2aeb8-11e5-49b4-a5e3-f300831dfbff" />
 
